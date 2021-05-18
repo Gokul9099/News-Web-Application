@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link href="/css/main.css" rel="stylesheet" type="text/css"/>
+           
+    </head>
+    <body>
+        <header>
+                <div class="logo">
+                    <img src="/images/logo.jfif">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="/addnews">News Form</a>
+                        </li>
+                        <li>
+                            <a href="/editnews">Edit News</a>
+                        </li>
+                        <li>
+                            <a href="/logout"> Logout</a> 
+                        </li>
+                        
+                    </ul>
+                </div>
+        </header>
+            <section class="homePage classWidth">
+                <%if(edit != 1){%>    
+                <h1>ADD NEWS </h1>
+                <% } else{ %>
+                   <h1>UPDATE NEWS</h1> 
+                   <%}%>
+                <form method="post" action="/addnews">
+                    <div class="div-from">
+                        <label>Title:</label>
+                        <input type="text" name="title" value="<%=news.title%>" required>
+                    </div>
+                    <div class="div-from">
+                        <label>Description:</label>
+                        <input type="text" name="description" value="<%=news.description%>" required>
+                    </div>
+                    <%if(edit != 1){%>
+                        <input type="hidden" name="id" value="<%=news.id%>"></input> 
+                        <input type="hidden" name="edit" value="0"></input>  
+                         <button type="submit">ADD</button>
+                  
+                    <% } else{ %>
+                    <input type="hidden" name="id" value="<%=news.id%>"></input>    
+                     <input type="hidden" name="edit" value="1"></input>   
+                    <button type="submit">UPDATE</button>
+                    <%}%>
+
+                </form>
+            </section>
+            <%- include('footer'); -%>
+    </body>
+    <script src="js/main.js" type="text/javascript"></script>
+</html>

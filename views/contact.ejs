@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+        <%- include('header'); -%>
+                <section class="registerPage">
+                        <article class="classWidth margin">
+                                <h1>Contact Us</h1>
+                                <form>
+                                        <div class="div-from">
+                                                <label>Email:</label>
+                                                <input type="email" id="email" name="email" required>
+                                        </div>
+                                        <div class="div-from">
+                                                <label>Subject:</label>
+                                                <input type="text" id="subject" name="subject" required>
+                                        </div>
+                                        <div class="div-from">
+                                                <label>Query:</label>
+                                                <textarea type="text" id="text" name="text" cols="30" rows="6"
+                                                        required></textarea>
+                                                <div><input id="submitButton" type="submit" value="Submit"></div>
+                                        </div>
+                                </form>
+
+                        </article>
+                </section>
+                <%- include('chat'); -%>
+
+                        <%- include('footer'); -%>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/contactus.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+
+</html>

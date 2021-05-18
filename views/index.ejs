@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<%- include('header'); -%>
+
+    <section class="wr_report">
+        <a class="cur-con-weather-card card-module non-ad content-module lbar-panel" href="#">
+            <div class="cur-con-weather-card__body">
+                <div class="cur-con-weather-card__panel">
+                    <h2 class="cur-con-weather-card__title">
+                        Current Weather
+                    </h2>
+                    <p class="cur-con-weather-card__subtitle">
+                        <%=strTime%>, <%=city%>
+                    </p>
+                    <div class="forecast-container">
+                        <!-- <img class="weather-icon" src="/images/36.svg" width="88" height="88">
+                         -->
+                        <img class="weather-icon" src='https://openweathermap.org/img/w/<%=icon%>.png' alt="weather"
+                            width="88" height="88" />
+                        <div class="temp-container">
+                            <div class="temp">
+                                <%=temp%><span class="after-temp">C</span>
+                            </div>
+                            <div class="real-feel">
+                                RealFeel®
+                                <%=feelsLike%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cur-con-weather-card__panel details-container">
+
+                    <div class="spaced-content detail">
+                        <span class="label">Humidity</span>
+                        <span class="value" style="color: #FFC300">
+                            <%=humidity%>
+                        </span>
+                    </div>
+                    <div class="spaced-content detail">
+                        <span class="label">Wind</span>
+                        <span class="value" style="color: #FFC300">
+                            <%=windSpeed%> km/h
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="spaced-content">
+                <span class="phrase">
+                    <%=weather%>
+                </span>
+
+            </div>
+        </a>
+    </section>
+    <section class="slider-section">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                
+                <img src="images/img_nature_wide.jpg" style="width:100%">
+                
+            </div>
+
+            <div class="mySlides fade">
+                
+                <img src="images/img_snow_wide.jpg" style="width:100%">
+                
+            </div>
+
+            <div class="mySlides fade">
+               
+                <img src="images/img_mountains_wide.jpg" style="width:100%">
+                
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+    <section class="latest-news">
+      <% i = 0 %>
+      <% news.forEach(function(item) { %>
+        <%if(i < 3){ i++; %>
+          
+        <article>
+          <h4><%= item.title %></h4>
+          <p><%= item.description %></p>
+          <p><%= item.published %></p>
+      </article>
+     <%} }); %> 
+    </section>
+
+
+
+
+    <section class="news">
+      <% if(news[3].title){ %>
+
+      
+        <h1 class="title ">
+            <%=news[3].title%>
+        </h1>
+        <div class="byline-section">
+          <%=news[3].published%>
+        </div>
+        <p class="paragraph-block content-module">
+          <%=news[3].description%>
+        </p>
+      <%} %>
+    </section>
+
+
+    <%- include('chat'); -%>
+    
+
+    <%- include('footer'); -%>
+</body>
+
+
+</html>
+
