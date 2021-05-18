@@ -61,7 +61,7 @@ const Details = mongoose.model('details', {
     type: { type: String }
 })
 
-const api = "2eeab22581640da766229804ddc894e1";
+const api = "Your API Key";
 app.use("/styles", express.static(__dirname + "/styles"));
 app.use("/css", express.static(__dirname + "/css"));
 app.use("/images", express.static(__dirname + "/images"));
